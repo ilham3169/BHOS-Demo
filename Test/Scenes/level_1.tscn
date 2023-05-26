@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://cqwv2elf6cmw1"]
+
+[ext_resource type="Texture2D" uid="uid://csx1flqvq6uov" path="res://Extras/1-173.png" id="1_r07d8"]
+[ext_resource type="PackedScene" uid="uid://byyueilla17m0" path="res://Prefab/player(nodeless).tscn" id="2_ykq3h"]
+[ext_resource type="PackedScene" uid="uid://cby3aqhsxspx4" path="res://Prefab/npc.tscn" id="3_c6kqe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y53lb"]
+size = Vector2(796.5, 164.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4awrf"]
+size = Vector2(362, 645)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4xole"]
+size = Vector2(176, 160)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v4yuu"]
+size = Vector2(497, 162)
+
+[node name="Level 1" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(1.8, 1.35)
+texture = ExtResource("1_r07d8")
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
+position = Vector2(753.75, 85.75)
+shape = SubResource("RectangleShape2D_y53lb")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
+position = Vector2(179, 325.5)
+shape = SubResource("RectangleShape2D_4awrf")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
+position = Vector2(416, 568)
+shape = SubResource("RectangleShape2D_4xole")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
+position = Vector2(895.5, 567)
+shape = SubResource("RectangleShape2D_v4yuu")
+
+[node name="Player" parent="." instance=ExtResource("2_ykq3h")]
+position = Vector2(464, 544)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-464, -528)
+anchor_mode = 0
+zoom = Vector2(1, 1.03)
+limit_left = 0
+limit_top = 0
+limit_right = 1154
+limit_bottom = 647
+limit_smoothed = true
+editor_draw_limits = true
+
+[node name="npc" parent="." instance=ExtResource("3_c6kqe")]
+position = Vector2(688, 64)
