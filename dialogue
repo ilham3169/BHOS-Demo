@@ -1,0 +1,17 @@
+~ enemyMain
+Murad: Salam qaqa netersen?
+- yaxsiliq sukur
+	Murad: teki yaxsi ol ayqa
+	set global.dialogueConfirmation = true
+	=> END
+- sen kimsen amk?
+	Murad: Men oglan olmayan muradam
+	- bomba kimi 
+		set global.dialogueConfirmation = true
+		=> END
+	- sene hormet elemirem 
+		set global.dialogueConfirmation = true
+		=> END
+- e sen oglan deilsen, dur bas bayra
+	set global.dialogueConfirmation = true
+	=> END
